@@ -1,0 +1,91 @@
+.videoLoader {
+  margin-bottom: 1.5rem;
+}
+
+.videoLoader .row {
+  margin: 0;
+  padding: 0;
+}
+
+.videoLoader .row .col-10 {
+  padding: 0;
+  max-height: fit-content;
+}
+
+.videoLoader .row .col-10 p {
+  font-family: Poppins;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.4642857015132904px;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+.videoLoader .row .col-2 {
+  padding: 0;
+  max-height: fit-content;
+}
+
+.videoLoader .row .col-2 p {
+  font-family: Poppins;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.4642857015132904px;
+  text-align: right;
+  margin-bottom: 8px;
+}
+
+.videoLoader .progressBar {
+  height: 5px !important;
+  padding: 0;
+  border-radius: 0.3125rem;
+  background-color: #eceff5;
+  margin-bottom: 0.56rem;
+}
+
+.videoLoader .progressBar .progress {
+  max-height: 100%;
+  border-radius: 0.3125rem;
+  background-color: #31ba96;
+  transition: 0.2s;
+  box-shadow: 0px 0 10px 1px #31ba96;
+}
+
+.videoLoader .loaderFooter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.videoLoader .status {
+  color: #273240;
+  font-family: Poppins;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem; /* 184.615% */
+  letter-spacing: 0.029rem;
+  text-align: left;
+  animation: blinker 1.5s linear infinite;
+}
+.videoLoader .error {
+  color: #273240;
+  font-family: Poppins;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem; /* 184.615% */
+  letter-spacing: 0.029rem;
+  text-align: right;
+  text-decoration: underline;
+  color: rgb(71, 71, 197);
+  cursor: pointer;
+  display: none;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}

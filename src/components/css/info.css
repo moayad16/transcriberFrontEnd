@@ -1,0 +1,21 @@
+.info {
+  padding: 76px 50px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 30px;
+  letter-spacing: 0.3333333432674408px;
+  color: #262A41;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.info .videosProcessing {
+    margin-bottom: 1.37rem;
+}

@@ -1,0 +1,46 @@
+.finishedVideos .row {
+  padding: 0;
+  margin: 0;
+}
+
+.finishedVideos p {
+  color: #273240;
+  font-family: Poppins;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5rem; /* 184.615% */
+  letter-spacing: 0.029rem;
+  text-align: left;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.finishedVideos .col-6 {
+    padding: 0;
+    max-height: fit-content;
+}
+
+.finishedVideos .finished {
+  color: #31ba96;
+  font-family: Poppins;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5rem; /* 184.615% */
+  letter-spacing: 0.029rem;
+  text-align: left;
+}
+
+.finishedVideos .download {
+  color: #0069d5;
+  text-align: right;
+  font-family: Poppins;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5rem;
+  letter-spacing: 0.029rem;
+  text-decoration-line: underline;
+  cursor: pointer;
+}

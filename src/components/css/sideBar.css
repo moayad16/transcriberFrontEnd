@@ -1,0 +1,130 @@
+.sideBarComp {
+    padding-top: 1.025rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* height: calc(100vh - 40px); */
+    height: 100%;
+
+}
+
+.sideBarComp .logo {
+    display: flex;
+    margin-left: 37px;
+    max-width: 100%;
+    align-items: center;
+    margin-top: 7vh;
+    margin-bottom: 10vh;
+}
+
+.sideBarComp .logo h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-right: 10px;
+
+}
+
+.sideBarComp .logo img {
+    margin-right: 10px;
+}
+
+.sideBarComp .logo .close {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.sideBarComp .logo .circle {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: rgb(159, 0, 0);
+}
+
+.sideBarComp .navigationPages {
+    /* margin-top: 30%; */
+    margin-bottom: 13%;
+}
+
+.sideBarComp .navigationPages ul {
+    list-style: none;
+    padding-left: 3rem;
+    margin: 0;
+    text-align: left;
+}
+
+.sideBarComp .navigationPages ul li {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+    margin-bottom: 35px;
+    opacity: 50%;
+    transition: 0.2s;
+}
+
+.sideBarComp .navigationPages ul li:hover {
+    opacity: 100%;
+    cursor: pointer;
+}
+
+.sideBarComp .navigationPages ul .active {
+    opacity: 100%;
+}
+
+.sideBarComp .boxTips {
+    background-color: #EDF0F6;
+    border-radius: 20px;
+    margin-top: 1rem;
+    position: relative;
+    padding: 25px;
+    padding-top: 5rem;
+    max-width: 250px;
+    margin-left: 2rem;
+}
+
+.sideBarComp .boxTips .leftImage {
+    position: absolute;
+    left: 25px;
+    top: -15px;
+}
+
+.sideBarComp .boxTips .rightImage {
+    position: absolute;
+    right: 25px;
+    top: -33px;
+}
+
+.sideBarComp .boxTips h6 {
+    color: black;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-align: left;
+}
+
+
+.sideBarComp .boxTips p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 21px;
+    text-align: left;
+    color: #404852;
+}
+
+.sideBarComp .boxTips button {
+    background-color: black;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    width: 200px;
+    border: 1px solid black;
+    height: 45px;
+}
+
+.sideBarComp .boxTips button:hover {
+    background-color: rgb(38, 38, 38);
+    cursor: pointer;
+}

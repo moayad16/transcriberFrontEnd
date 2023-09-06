@@ -1,0 +1,51 @@
+.recentVideos {
+  margin-top: auto;
+  width: 90%;
+}
+
+.recentVideos h4 {
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0.30000001192092896px;
+  text-align: left;
+}
+
+.recentVideos hr {
+  border: 1px solid #DEDEDE;
+}
+
+.recentVideos table {
+  width: 100%;
+}
+
+.recentVideos table tr td {
+    padding-bottom: 17px;
+}
+
+.recentVideos table .videoName,
+.recentVideos table .download {
+  font-family: 'Poppins', sans-serif;
+  /* font-size: 16px; */
+  font-size: 100%;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  text-decoration: underline;
+}
+
+.recentVideos table .download {
+  color: #0069d5;
+  text-align: right;
+  cursor: pointer;
+}
+
+.recentVideos table .videoSource {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0.34285715222358704px;
+  text-align: right;
+}

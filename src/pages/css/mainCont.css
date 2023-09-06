@@ -1,0 +1,75 @@
+.mainCont {
+    color: white;
+    background-color: black;
+    position: relative;
+    min-height: 100vh;
+    max-height: fit-content;
+    overflow-x: hidden;
+}
+
+.mainCont .row {
+    max-width: 100%;
+    height: 100%;
+    padding: 20px 20px 20px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mainCont .row .sideBar {
+    background-color: black;
+    max-height: calc(100vh - 40px);
+    max-width: fit-content;
+    position: relative;
+    transition: 0.2s;
+    position: absolute;
+    left: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.mainCont .row .sideBar::-webkit-scrollbar {
+  width: 0;
+}
+
+.mainCont .row .sideBar:hover::-webkit-scrollbar {
+  width: 8px;
+}
+
+.mainCont .row .sideBar::-webkit-scrollbar-thumb {
+  background-color: blue;
+  border-radius: 20px;
+}
+
+.mainCont .row .sideBar::-webkit-scrollbar-thumb:active {
+  background-color: rgb(0, 0, 147);
+}
+
+.mainCont .row .mainComponent {
+    position: absolute;
+    right: 20px;
+    max-width: calc(100vw - 40px);
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+    padding: 0;
+    height: calc(100vh - 40px);
+    z-index: 9999999;
+    transition: 0.2s;
+}
+
+.mainCont .row .mainComponent .sideBarToggle {
+    color: white;
+    background-color: black;
+    width: 70px;
+    height: 40px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 20px; 
+    z-index: 99;
+    cursor: pointer;
+}
