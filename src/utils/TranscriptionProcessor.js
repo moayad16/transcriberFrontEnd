@@ -1,9 +1,12 @@
 import { bindActionCreators } from "redux";
 import { actionCreators } from "../store";
-import SocketHandler from "./socketHandler";
+import { io } from "socket.io-client";
 
 export class TranscriptionProcessor {
-  constructor(dispatch, videoLink) {
+  constructor(dispatch, videoLink, token) {
+    console.log("this is the video link ", videoLink);
+    this.socket = io("http://localhost:9090");
+
     this._dispatch = dispatch;
     this._createNewVideoProccess = bindActionCreators(
       actionCreators.createNewTranscriptionProcess,
@@ -26,45 +29,48 @@ export class TranscriptionProcessor {
       dispatch
     );
 
-    this.connectedSocket = new SocketHandler();
     this.videoLink = videoLink;
+    this.transcription = "";
+    this.token = token;
   }
 
   async processTranscription() {
-    this.connectedSocket.emit("postUrl", { url: this.videoLink });
+    this.socket.emit("postUrl", { url: this.videoLink, token: this.token });
 
-    this.connectedSocket.on("info", (data) => {
+    this.socket.on("info", (data) => {
       this._createNewVideoProccess({
         title: data.title,
         status: "Loading . . .",
         transcript: null,
         id: data.id,
         percent: 0,
+        url: data.url,
       });
     });
 
-    this.connectedSocket.on("status", (data) => {
+    this.socket.on("status", (data) => {
       this._updateStatus({
         id: data.id,
-        status: data.status,
+        status: data.message,
         percent: data.percent,
       });
     });
 
-    this.connectedSocket.on("transcript", (data) => {
+    this.socket.on("transcription", (data) => {
       this._createNewFinishedTranscription({
         id: data.id,
         title: data.title,
         transcript: data.transcript,
+        url: this.videoLink,
       });
 
       this._deleteTranscriptionProcess(data.id);
     });
 
-    this.connectedSocket.on("error", (data) => {
+    this.socket.on("error", (data) => {
       this._updateStatus({
         id: data.id,
-        status: data.status,
+        status: data.message,
         percent: data.percent,
         url: this.videoLink,
       });
@@ -72,7 +78,8 @@ export class TranscriptionProcessor {
   }
 
   async retryTranscription(id) {
-    this.deleteTranscriptionProcess(id);
+    console.log("this is the id from the retry funciton", id);
+    this._deleteTranscriptionProcess(id);
     this.processTranscription();
   }
 }

@@ -16,8 +16,6 @@ export default function MainCont() {
     (state) => state.mainComponent
   ).mainComponent;
 
-  // console.log("Main Component _________________________________________________\n",MainComponent);
-
   
   const [width, setWidth] = useState(window.innerWidth);
   const [translation, setTranslation] = useState(0);
@@ -34,7 +32,7 @@ export default function MainCont() {
 
   const handleOpen = () => {
     setClosed(false);
-    setTranslation((sideBarRef.current.offsetWidth / window.innerWidth) * 100 );
+    setTranslation((sideBarRef.current.offsetWidth / window.innerWidth) * 100 + 10 );
   };
 
   const handleClose = () => {
@@ -46,7 +44,7 @@ export default function MainCont() {
     <div className="mainCont">
       <div className="row">
         <div ref={sideBarRef} className="col-lg-4 sideBar">
-          <SideBar width={width} />
+          <SideBar close={handleClose} width={width} />
         </div>
         <div
           style={{ transform: `translateX(${translation}%)` }}

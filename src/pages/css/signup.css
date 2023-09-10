@@ -1,0 +1,119 @@
+.signup .row {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.signup .right {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup .right {
+  padding: 6.25%;
+  padding-bottom: 0;
+}
+
+.signup .right h1 {
+  color: #040308;
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.signup .right p {
+  color: #040308;
+  font-family: "poppins", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 6.25rem;
+}
+
+.signup .right input {
+  display: flex;
+  padding: 0.9375rem 1.25rem;
+  align-items: flex-start;
+  gap: 0.625rem;
+  align-self: stretch;
+  border-radius: 0.3125rem;
+  border: 1px solid rgba(4, 3, 8, 0.6);
+  margin-bottom: 1.25rem;
+}
+
+.signup .right .namesCont {
+    display: flex;
+    justify-content: space-between;
+}
+
+.signup .right .names {
+    max-width: 17rem;
+}
+
+.signup .right h2 {
+  font-family: "poppins", sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  cursor: pointer;
+}
+
+.signup .right .check {
+  display: inline;
+  align-self: baseline;
+  margin: 0 0.94rem 0 0;
+  border-radius: 0.1875rem;
+  border: 1px solid #000 !important;
+}
+
+.signup .right .btn-secondary,
+.signup .right .btn {
+  padding: 0.9375rem 1.25rem;
+  align-self: stretch;
+  border-radius: 0.3125rem;
+  background: #312ecb;
+  font-family: "poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: 0.2s;
+  margin: 1.88rem 0;
+}
+
+.signup .right button:hover {
+  background-color: #22208d;
+}
+
+.signup .right .separator {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.88rem;
+}
+
+.signup .right .separator hr {
+  flex-grow: 1;
+}
+
+.signup .right .separator p {
+  margin: 0 0.63rem;
+}
+
+.signup .right .btn-secondary {
+  background-color: white;
+  color: black;
+  margin-bottom: 1.25rem;
+  margin-top: 0;
+  transition: 0.4;
+}
+
+.signup .right .btn-secondary:hover {
+  background-color: #040308;
+  color: white;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0 !important;
+}

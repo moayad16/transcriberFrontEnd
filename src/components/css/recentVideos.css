@@ -16,36 +16,48 @@
   border: 1px solid #DEDEDE;
 }
 
-.recentVideos table {
-  width: 100%;
+.recentVideos .row{
+  display: flex;
+  justify-content: space-between;
+  height: fit-content;
 }
 
-.recentVideos table tr td {
-    padding-bottom: 17px;
-}
-
-.recentVideos table .videoName,
-.recentVideos table .download {
+.recentVideos .videoName,
+.recentVideos .download {
   font-family: 'Poppins', sans-serif;
   /* font-size: 16px; */
-  font-size: 100%;
-  font-weight: 400;
-  line-height: 24px;
-  text-align: left;
+  font-size: 100% !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+  text-align: left !important;
+  opacity: 1 !important;
   text-decoration: underline;
 }
 
-.recentVideos table .download {
+.recentVideos .download {
   color: #0069d5;
   text-align: right;
   cursor: pointer;
 }
 
-.recentVideos table .videoSource {
+.recentVideos .videoSource {
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 600 !important;
+  color: black;
+  opacity: 1 !important;
   line-height: 24px;
   letter-spacing: 0.34285715222358704px;
-  text-align: right;
+  text-align: left !important;
+}
+
+.recentVideos p {
+  margin-bottom: 0;
+}
+
+.recentVideos .col-lg-2,
+.recentVideos .col-lg-5,
+.recentVideos .col-lg-3{
+  height: fit-content;
+  padding: 0;
 }

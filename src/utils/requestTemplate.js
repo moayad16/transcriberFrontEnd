@@ -1,6 +1,6 @@
 import axios from "axios";
-
-export const ax = axios.create({
+    
+export let ax = axios.create({
     baseURL: "http://localhost:8080",
     headers: {
         "Content-type": "application/json"

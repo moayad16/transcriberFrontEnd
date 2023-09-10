@@ -14,7 +14,7 @@ export default function FinishedVideos({title, transcript}) {
   }
 
   return (
-    <div className="finishedVideos animate__animated animate__fadeInUp">
+    <div className="finishedVideos animate__animated animate__fadeInRight">
       <div className="row">
         <p>{title}</p>
         <div className="col-6">

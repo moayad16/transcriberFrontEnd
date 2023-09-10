@@ -1,0 +1,117 @@
+.login .row {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  max-height: fit-content !important;
+}
+
+.login .right {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.login .right {
+  padding: 6.25%;
+}
+
+.login .right h1 {
+  color: #040308;
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.login .right p {
+  color: #040308;
+  font-family: "poppins", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 6.25rem;
+}
+
+.login .right input {
+  display: flex;
+  padding: 0.9375rem 1.25rem;
+  align-items: flex-start;
+  gap: 0.625rem;
+  align-self: stretch;
+  border-radius: 0.3125rem;
+  border: 1px solid rgba(4, 3, 8, 0.6);
+  margin-bottom: 1.25rem;
+}
+
+.login .right h2 {
+  color: #312ecb;
+  font-family: "poppins", sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.login .right .error {
+    color: red;
+    font-family: "poppins", sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: auto;
+}
+
+.login .right .btn-secondary,
+.login .right .btn {
+  padding: 0.9375rem 1.25rem;
+  align-self: stretch;
+  border-radius: 0.3125rem;
+  background: #312ecb;
+  font-family: "poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: 0.2s;
+  margin: 1.88rem 0;
+}
+
+.login .right button:hover {
+  background-color: #22208d;
+}
+
+.login .right .separator {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.88rem;
+}
+
+.login .right .separator hr {
+  flex-grow: 1;
+}
+
+.login .right .separator p {
+  margin: 0 0.63rem;
+}
+
+.login .right .btn-secondary {
+  background-color: white;
+  color: black;
+  margin-bottom: 1.25rem ;
+  margin-top: 0;
+  transition: 0.4;
+}
+
+.login .right .btn-secondary:hover {
+  background-color: #040308;
+  color: white;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0 !important;
+}
