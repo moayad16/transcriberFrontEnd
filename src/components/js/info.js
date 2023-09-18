@@ -33,7 +33,7 @@ export default function Info() {
           <FinishedVideos
             key={transcription.id}
             title={transcription.title}
-            transcript={transcription.transcript}
+            transcript={transcription.text}
           />
         )
       })}

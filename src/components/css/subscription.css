@@ -1,0 +1,86 @@
+.subscription {
+  text-align: center;
+  padding-top: 3%;
+  background-color: white;
+  border-radius: 20px;
+  border-radius: 20px;
+}
+
+.subscription h1 {
+  color: var(--neutral-800, #191d23);
+  text-align: center;
+  font-family: "popins", sans-serif;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.subscription .subtitle {
+  background: linear-gradient(266deg, #55cbfb -21.73%, #1d4ed8 96.22%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "popins", sans-serif;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 1rem;
+}
+
+.subscription p {
+  color: var(--neutral-800, #191d23);
+  text-align: center;
+  font-family: "popins", sans-serif;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.subscription .switch {
+  padding: 0;
+  margin-top: 2rem;
+  position: relative;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.subscription .switch input {
+  margin: 0;
+  width: 2.75rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
+
+.subscription .switch span {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.subscription .saver {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  right: 20%;
+  top: -100%;
+  z-index: 1;
+
+}
+
+.subscription .saver p {
+  margin: 0;
+  color: var(--primary-blue-500, #1d4ed8);
+  font-family: "popins", sans-serif;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.subscription .cards {
+  margin: 0;
+}

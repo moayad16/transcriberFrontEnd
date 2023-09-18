@@ -1,11 +1,16 @@
 import { bindActionCreators } from "redux";
 import { actionCreators } from "../store";
 import { io } from "socket.io-client";
+import Cookies from "js-cookie";
 
 export class TranscriptionProcessor {
   constructor(dispatch, videoLink, token) {
     console.log("this is the video link ", videoLink);
-    this.socket = io("http://localhost:9090");
+    this.socket = io("http://192.168.1.4:9090", {
+      auth: {
+        token: Cookies.get("token")
+      }
+    });
 
     this._dispatch = dispatch;
     this._createNewVideoProccess = bindActionCreators(
@@ -60,8 +65,8 @@ export class TranscriptionProcessor {
       this._createNewFinishedTranscription({
         id: data.id,
         title: data.title,
-        transcript: data.transcript,
-        url: this.videoLink,
+        text: data.transcript,
+        videoUrl: this.videoLink,
       });
 
       this._deleteTranscriptionProcess(data.id);

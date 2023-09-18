@@ -20,6 +20,13 @@
   display: flex;
   justify-content: space-between;
   height: fit-content;
+  margin-top: 2rem;
+  padding: 0;
+  padding-left: 12px;
+}
+
+.recentVideos .row h1 {
+  margin: 0;
 }
 
 .recentVideos .videoName,

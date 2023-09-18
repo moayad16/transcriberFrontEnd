@@ -34,10 +34,10 @@
 }
 
 .sideBarComp .logo .circle {
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    background-color: rgb(159, 0, 0);
+    height: 30px;
+    width: 65px;
+    border-radius: 90%;
+    background-color: #1d4ed8;
 }
 
 .sideBarComp .navigationPages {

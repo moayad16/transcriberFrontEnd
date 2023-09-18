@@ -43,3 +43,10 @@ export const createNewFinishedTranscription = (transcription) => {
 }
 
 
+export const setFinishedTranscriptions = (transcriptions) => {
+  return {
+    type: "SET_FINISHED_TRANSCRIPTIONS",
+    payload: transcriptions,
+  };
+}
+

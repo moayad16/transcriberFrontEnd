@@ -5,6 +5,7 @@ import { bindActionCreators } from "redux";
 import { useSelector, useDispatch } from "react-redux";
 import { actionCreators } from "../../store";
 import { Link } from "react-router-dom";
+import Cookies from "js-cookie";
 
 export default function SideBar({ width, close }) {
   const dispatch = useDispatch();
@@ -15,10 +16,11 @@ export default function SideBar({ width, close }) {
 
   const selectedComponent = useSelector(
     (state) => state.mainComponent
-  ).mainComponent;
+  );
+
 
   const Logout = () => {
-    localStorage.removeItem("token");
+    Cookies.remove("token");
     window.location.reload();
   }
 
@@ -26,7 +28,7 @@ export default function SideBar({ width, close }) {
     <div className="sideBarComp">
       <div className="logo">
         {/* <img src={require("../../assets/Logo.png")} alt="logo" /> */}
-        <h1>Transcriber</h1>
+        <h1>Transcriber.io</h1>
         <div className="circle"></div>
       </div>
       <div className="navigationPages">
@@ -58,12 +60,12 @@ export default function SideBar({ width, close }) {
           >
             Subscription
           </li>
-          {localStorage.getItem("token") ? (
-            <Link style={{ textDecoration: "none" }} to="/login">
-              <li>Logout</li>
-            </Link>
+          {Cookies.get("token") ? (
+            <li onClick={Logout}>Logout</li>
           ) : (
-              <li onClick={Logout}>Login</li>
+            <Link style={{ textDecoration: "none" }} to="/login">
+              <li>Login</li>
+            </Link>
           )}
         </ul>
       </div>

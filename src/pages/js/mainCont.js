@@ -14,7 +14,7 @@ export default function MainCont() {
 
   const MainComponent = useSelector(
     (state) => state.mainComponent
-  ).mainComponent;
+  )
 
   
   const [width, setWidth] = useState(window.innerWidth);

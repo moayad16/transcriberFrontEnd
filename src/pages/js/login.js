@@ -6,8 +6,11 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle, faApple } from "@fortawesome/free-brands-svg-icons";
 import "animate.css";
-import { ax } from "../../utils/requestTemplate";
+// import { ax } from "../../utils/requestTemplate";
 import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
+import Spinner from "../../components/js/spinner";
+import requestTemplate from "../../utils/requestTemplate";
 
 export default function Login() {
   const [loginInfo, setLoginInfo] = useState({
@@ -17,6 +20,7 @@ export default function Login() {
 
   const [width, setWidth] = useState(window.innerWidth);
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -26,13 +30,23 @@ export default function Login() {
   }, []);
 
   const submit = async () => {
-    const res = await ax
+    setLoading(true);
+
+    const rt = new requestTemplate(null);
+    const ax = await rt.getRequestTemplate();
+
+    await ax
       .post("/auth/login", loginInfo)
       .then((res) => {
-        localStorage.setItem("token", res);
+        Cookies.set("token", res.data, { expires: 1 });
+        rt.setToken(res.data);
         navigate("/");
       })
-      .catch((err) => setError(true));
+      .catch((err) => {
+        console.log(err);
+        setLoading(false);
+        setError(true);
+      });
   };
 
   return (
@@ -71,9 +85,15 @@ export default function Login() {
             Invalid Email Or Password
           </h2>
           <h2>Forgot Password?</h2>
-          <button onClick={submit} className="btn btn-primary">
-            Login
-          </button>
+          {loading ? (
+            <button onClick={submit} className="btn btn-primary">
+              <Spinner />
+            </button>
+          ) : (
+            <button onClick={submit} className="btn btn-primary">
+              Login
+            </button>
+          )}
           <div className="separator">
             <hr />
             <p>or</p>

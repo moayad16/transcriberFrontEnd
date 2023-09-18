@@ -8,6 +8,8 @@ import { faGoogle, faApple } from "@fortawesome/free-brands-svg-icons";
 import "animate.css";
 import { ax } from "../../utils/requestTemplate";
 import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
+import Spinner from "../../components/js/spinner";
 
 export default function Login() {
   const [signupInfo, setsignupInfo] = useState({
@@ -18,6 +20,7 @@ export default function Login() {
   });
 
   const [width, setWidth] = useState(window.innerWidth);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -27,12 +30,14 @@ export default function Login() {
   }, []);
 
   const submit = async () => {
-    const res = await ax.post("/auth/register", signupInfo).then((res) => {
-        localStorage.setItem("token", res);
+    await ax
+      .post("/auth/register", signupInfo)
+      .then((res) => {
+        Cookies.set("token", res.data, { expires: 1 });
         navigate("/");
-    })
-    .catch((err) => console.log(err));
-  }
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <div className="signup">
@@ -45,13 +50,13 @@ export default function Login() {
               : "col-lg-6 animate__fadeInRight"
           }`}
         >
-          <h1 style={{marginBottom: 0}}>Create account</h1>
+          <h1 style={{ marginBottom: 0 }}>Create account</h1>
           <p>
             Already have an account? <Link to="/login">Login</Link>
           </p>
           <div className="row namesCont">
             <input
-              className={width<1006? "col-lg-12": "col-lg-6 names"}
+              className={width < 1006 ? "col-lg-12" : "col-lg-6 names"}
               type="text"
               onChange={(e) =>
                 setsignupInfo({ ...signupInfo, firstName: e.target.value })
@@ -59,7 +64,7 @@ export default function Login() {
               placeholder="First Name"
             />
             <input
-              className={width<1006? "col-lg-12": "col-lg-6 names"}
+              className={width < 1006 ? "col-lg-12" : "col-lg-6 names"}
               type="text"
               onChange={(e) =>
                 setsignupInfo({ ...signupInfo, lastName: e.target.value })
@@ -82,11 +87,19 @@ export default function Login() {
             placeholder="Password"
           />
 
-          <h2 style={{marginBottom: 0}}>
-            <input type="checkbox" className="check" />I agree to Transcriber's Terms
-            of service and <Link>Privacy policy</Link>
+          <h2 style={{ marginBottom: 0 }}>
+            <input type="checkbox" className="check" />I agree to Transcriber's
+            Terms of service and <Link>Privacy policy</Link>
           </h2>
-          <button onClick={submit} className="btn btn-primary">Create Account</button>
+          {loading ? (
+            <button onClick={submit} className="btn btn-primary">
+              <Spinner />
+            </button>
+          ) : (
+            <button onClick={submit} className="btn btn-primary">
+              Create Account
+            </button>
+          )}
           <div className="separator">
             <hr />
             <p>or</p>
