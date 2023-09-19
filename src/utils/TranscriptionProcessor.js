@@ -6,10 +6,10 @@ import Cookies from "js-cookie";
 export class TranscriptionProcessor {
   constructor(dispatch, videoLink, token) {
     console.log("this is the video link ", videoLink);
-    this.socket = io("http://192.168.1.4:9090", {
+    this.socket = io("https://transcriber-io-back-end.onrender.com", {
       auth: {
-        token: Cookies.get("token")
-      }
+        token: Cookies.get("token"),
+      },
     });
 
     this._dispatch = dispatch;
