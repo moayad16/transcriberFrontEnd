@@ -30,13 +30,13 @@ export default function Login() {
   }, []);
 
   const submit = async () => {
-    await ax
-      .post("/auth/register", signupInfo)
-      .then((res) => {
-        Cookies.set("token", res.data, { expires: 1 });
-        navigate("/");
-      })
-      .catch((err) => console.log(err));
+    const rt = new requestTemplate(null);
+    const ax = await rt.getRequestTemplate();
+    ax.post("/auth/signup", signupInfo).then((res) => {
+      Cookies.set("token", res.data, { expires: 1 });
+      rt.setToken(res.data);
+      navigate("/");
+    });
   };
 
   return (
