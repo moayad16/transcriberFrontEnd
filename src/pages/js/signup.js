@@ -6,7 +6,6 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle, faApple } from "@fortawesome/free-brands-svg-icons";
 import "animate.css";
-// import { ax } from "../../utils/requestTemplate";
 import requestTemplate from "../../utils/requestTemplate";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
@@ -31,13 +30,19 @@ export default function Login() {
   }, []);
 
   const submit = async () => {
+    setLoading(true);
     const rt = new requestTemplate(null);
     const ax = await rt.getRequestTemplate();
-    ax.post("/auth/signup", signupInfo).then((res) => {
-      Cookies.set("token", res.data, { expires: 1 });
-      rt.setToken(res.data);
-      navigate("/");
-    });
+    
+    ax.post("/auth/signup", signupInfo)
+      .then((res) => {
+        Cookies.set("token", res.data, { expires: 1 });
+        rt.setToken(res.data);
+        navigate("/");
+      })
+      .catch((err) => {
+        setLoading(false);
+      });
   };
 
   return (
@@ -93,7 +98,7 @@ export default function Login() {
             Terms of service and <Link>Privacy policy</Link>
           </h2>
           {loading ? (
-            <button onClick={submit} className="btn btn-primary">
+            <button className="btn btn-primary">
               <Spinner />
             </button>
           ) : (
