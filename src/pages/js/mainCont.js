@@ -24,11 +24,12 @@ export default function MainCont() {
   const sideBarRef = useRef(null);
 
   useEffect(() => {
+    setWidth(window.innerWidth);
     if (width < 1300) {
       setClosed(true);
       setViz(true);
     }
-  }, []);
+  }, [window.innerWidth]);
 
   const handleOpen = () => {
     setClosed(false);

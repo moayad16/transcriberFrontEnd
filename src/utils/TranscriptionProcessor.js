@@ -7,6 +7,7 @@ export class TranscriptionProcessor {
   constructor(dispatch, videoLink, token) {
     console.log("this is the video link ", videoLink);
     this.socket = io("https://transcriber-io-back-end.onrender.com", {
+      // this.socket = io("http://localhost:9090", {
       auth: {
         token: Cookies.get("token"),
       },
