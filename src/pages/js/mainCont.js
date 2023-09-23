@@ -42,7 +42,7 @@ export default function MainCont() {
   };
 
   return (
-    <div className="mainCont">
+    <div style={!closed? {overflowX: "hidden"} : {overflowX: "hidden"}} className="mainCont">
       <div className="row">
         <div ref={sideBarRef} className="col-lg-4 sideBar">
           <SideBar close={handleClose} width={width} />
