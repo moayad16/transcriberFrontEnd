@@ -17,8 +17,6 @@ export default function RecentVideos({ redo }) {
   );
 
   if(!redo) {
-    // Only show 3 most recent videos
-    
     finishedTranscriptions = finishedTranscriptions.slice(-3);
   }
 
@@ -66,7 +64,8 @@ useEffect(() => {
         <h4>Recent Videos:</h4>
         <hr />
       </div>
-      {finishedTranscriptions.map((transcription) => {
+      {(finishedTranscriptions.length === 0)? (
+        finishedTranscriptions.map((transcription) => {
         return (
           <div className="row">
             <div className="col-lg-5">
@@ -93,7 +92,18 @@ useEffect(() => {
             </div>
           </div>
         );
-      })}
+      })
+      ) : (
+        <p>
+          No recent videos. Transcribe a video to see it here!{" "}
+          <span
+            onClick={() => mainComponentReducer("Transcribe")}
+            className="transcribeLink"
+          >
+            Transcribe
+          </span>
+        </p>
+      )}
     </div>
   );
 }

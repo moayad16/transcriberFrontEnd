@@ -1,8 +1,9 @@
 .mainCont {
   color: white;
   background-color: black;
+  min-height: 100vh;
   position: relative;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
   /* overflow-y: hidden; */
 }
 
@@ -54,7 +55,30 @@
   height: calc(100vh - 40px);
   z-index: 9999999;
   transition: 0.2s;
-  /* overflow-y: auto; */
+  overflow-y: auto;
+}
+
+.mainCont .row .mobileViewMainCont {
+  height: 100vh;
+  min-width: 100vw;
+  border-radius: 0;
+  right: 0;
+  top: 0;
+}
+
+.mainCont .row .mainComponent::-webkit-scrollbar-thumb {
+  background-color: #1d4ed8;
+  border-radius: 20px;
+}
+
+.mainCont .row .mainComponent::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.mainCont .row .mainComponent::-webkit-scrollbar {
+  max-width: 5px;
 }
 
 .mainCont .row .mainComponent .sideBarToggle {

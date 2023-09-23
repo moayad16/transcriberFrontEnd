@@ -33,7 +33,7 @@ export default function MainCont() {
 
   const handleOpen = () => {
     setClosed(false);
-    setTranslation((sideBarRef.current.offsetWidth / window.innerWidth) * 100 + 10 );
+    setTranslation((sideBarRef.current.offsetWidth / window.innerWidth) * 100 );
   };
 
   const handleClose = () => {
@@ -49,7 +49,7 @@ export default function MainCont() {
         </div>
         <div
           style={{ transform: `translateX(${translation}%)` }}
-          className={`${width < 1300 ? "col-lg-12" : "col-lg-9"} mainComponent`}
+          className={`${width < 1300 ? "col-lg-12 mobileViewMainCont" : "col-lg-9"} mainComponent`}
         >
           <div
             className="sideBarToggle"

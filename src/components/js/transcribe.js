@@ -6,20 +6,25 @@ import Info from "./info";
 import { useDispatch } from "react-redux";
 import { TranscriptionProcessor } from "../../utils/TranscriptionProcessor";
 import Cookies from "js-cookie";
+import { useSelector } from "react-redux";
+import Spinner from "./spinner";
 
 export default function Transcribe({ width }) {
-
   
   const [videoLink, setVideoLink] = useState("");
+  const [Loading, setLoading] = useState(false);
   const dispatch = useDispatch();
+
+
   
   const submit = () => {
-    console.log(videoLink);
+    setLoading(true);
     setVideoLink("")
     const transcriptionProcessor = new TranscriptionProcessor(dispatch, videoLink, localStorage.getItem("token"));
     transcriptionProcessor.processTranscription();
     const infoCol = document.querySelector(".infoCol");
     infoCol.scrollIntoView({ behavior: "smooth" });
+    setLoading(false);
   };
 
   return (
@@ -49,7 +54,11 @@ export default function Transcribe({ width }) {
             onClick={submit}
             className="btn btn-primary submit btn animate__animated animate__fadeInUp"
           >
-            Transcribe
+            {Loading ? (
+              <Spinner />
+            ) : (
+              "Submit"
+            )}
           </button>
           <RecentVideos />
         </div>

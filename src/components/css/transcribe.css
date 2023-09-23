@@ -57,6 +57,7 @@
 
 .transcribe .row .transcribeCol button {
   margin-left: auto;
+  margin-bottom: 4rem;
   margin-right: 10%;
   width: 30%;
   min-width: fit-content;
