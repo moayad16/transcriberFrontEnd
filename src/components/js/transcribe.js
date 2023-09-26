@@ -65,7 +65,7 @@ export default function Transcribe({ width }) {
         <div
           style={
             width < 1300
-              ? { borderRadius: "20px", height: "100%", overflowY: "hidden" }
+              ? { borderRadius: "0", height: "100%", overflowY: "hidden" }
               : null
           }
           className="col-lg-4 infoCol animate__animated animate__fadeIn"
