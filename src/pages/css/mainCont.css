@@ -5,6 +5,8 @@
   position: relative;
   /* overflow-x: hidden; */
   overflow-y: hidden;
+  -webkit-overflow-scrolling: hidden;
+
 }
 
 .mainCont .row {
@@ -61,10 +63,7 @@
   border-radius: 0;
   right: 0;
   top: 0;
-  overflow-y: auto;
-  /* padding-bottom: 4rem; */
-    /* background-color: #f9fafc; */
-
+  overflow-y: scroll;
 }
 
 .mainCont::-webkit-scrollbar-thumb {
