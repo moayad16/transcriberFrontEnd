@@ -4,7 +4,7 @@
   min-height: 100vh;
   position: relative;
   /* overflow-x: hidden; */
-  /* overflow-y: hidden; */
+  overflow-y: hidden;
 }
 
 .mainCont .row {
@@ -19,10 +19,7 @@
   background-color: black;
   max-height: calc(100vh - 40px);
   max-width: fit-content;
-  position: relative;
   transition: 0.2s;
-  position: absolute;
-  left: 0;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -32,11 +29,12 @@
 }
 
 .mainCont .row .sideBar:hover::-webkit-scrollbar {
-  width: 8px;
+  width: 5px;
+  transition: 0.2s;
 }
 
 .mainCont .row .sideBar::-webkit-scrollbar-thumb {
-  background-color: blue;
+  background-color: #1d4ed8;
   border-radius: 20px;
 }
 
@@ -55,7 +53,6 @@
   height: calc(100vh - 40px);
   z-index: 9999999;
   transition: 0.2s;
-  /* overflow-y: auto; */
 }
 
 .mainCont .row .mobileViewMainCont {
@@ -64,7 +61,10 @@
   border-radius: 0;
   right: 0;
   top: 0;
-  /* overflow-y: hidden; */
+  overflow-y: auto;
+  /* padding-bottom: 4rem; */
+    /* background-color: #f9fafc; */
+
 }
 
 .mainCont::-webkit-scrollbar-thumb {

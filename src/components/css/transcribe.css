@@ -5,6 +5,7 @@
 .transcribe .transcribeCont {
   margin: 0;
   padding: 0;
+  min-height: calc(100vh - 40px);
 }
 
 .transcribe .row .transcribeCol {
@@ -12,6 +13,7 @@
   text-align: left;
   display: flex;
   flex-direction: column;
+  background-color: white;
 }
 
 .transcribe .row .transcribeCol .title {
@@ -86,6 +88,7 @@
 .transcribe .row .infoCol {
   background-color: #f9fafc;
   border-top-right-radius: 20px;
+  padding-bottom: 4rem;
   border-bottom-right-radius: 20px;
   max-height: 100%;
   overflow-y: scroll;

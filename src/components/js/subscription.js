@@ -15,12 +15,13 @@ export default function Subscription({ width }) {
       rotate: "rotate(20deg)",
       marginTop: "5rem",
       borderRadius: "0",
+      paddingBottom: "4rem",
     };
   }
 
   return (
     <div
-      style={{paddingTop: style.paddingTop, borderRadius: style.borderRadius}}
+      style={{paddingTop: style.paddingTop, borderRadius: style.borderRadius, paddingBottom: style.paddingBottom}}
       className="subscription"
     >
       <h1 className="animate__animated animate__fadeInLeft">
